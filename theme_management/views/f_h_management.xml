@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="management_assets" inherit_id="website.assets_frontend" name="Website Assets">
+            <xpath expr="//link[last()]" position="after">
+                <!-- Favicon -->
+                <link rel="shortcut icon" href="/theme_management/static/src/img/favicon.png"/>
+                <!-- Library -->
+                <link rel="stylesheet" href="/theme_management/static/src/css/bootstrap.min.css"/>
+                <link rel="stylesheet" href="/theme_management/static/src/css/animate.css"/>
+                <!-- Theme CSS -->
+                <link rel="stylesheet" href="/theme_management/static/src/css/owl.carousel.min.css"/>
+
+                <link rel="stylesheet" href="/theme_management/static/src/css/themify-icons.css"/>
+                <link rel="stylesheet" href="/theme_management/static/src/css/flaticon.css"/>
+                <link rel="stylesheet" href="/theme_management/static/src/css/magnific-popup.css"/>
+                <link rel="stylesheet" href="/theme_management/static/src/css/slick.css"/>
+                <link rel="stylesheet" href="/theme_management/static/src/css/style.css"/>
+
+
+            </xpath>
+            <xpath expr="//script[last()]" position="after">
+                <!--                <script src="/theme_management/static/src/js/jquery-1.12.1.min.js"></script>-->
+                <script src="/theme_management/static/src/js/popper.min.js"></script>
+                <script src="/theme_management/static/src/js/bootstrap.min.js"></script>
+                <script src="/theme_management/static/src/js/jquery.magnific-popup.js"></script>
+                <script src="/theme_management/static/src/js/swiper.min.js"></script>
+                <script src="/theme_management/static/src/js/masonry.pkgd.js"></script>
+                <script src="/theme_management/static/src/js/owl.carousel.min.js"></script>
+                <script src="/theme_management/static/src/js/slick.min.js"></script>
+                <script src="/theme_management/static/src/js/custom.js"></script>
+
+
+            </xpath>
+        </template>
+
+
+        <template id="website_management_header" inherit_id="portal.frontend_layout" name="Website management Header">
+            <xpath expr="//header" position="replace">
+                <header class="main_menu home_menu">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <nav class="navbar navbar-expand-lg">
+
+                                    <a class="logo" href="/" title="Logo">
+                                        <span t-field="res_company.logo" t-options="{'widget': 'image'}"
+                                              t-att-alt="'Logo of %s' % res_company.name"
+                                              t-att-title="res_company.name"/>
+                                    </a>
+                                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                            aria-expanded="false" aria-label="Toggle navigation">
+                                        <span class="navbar-toggler-icon"></span>
+                                    </button>
+
+                                    <div class="collapse navbar-collapse main-menu-item justify-content-end"
+                                         id="navbarSupportedContent">
+                                        <ul class="navbar-nav">
+                                            <!--                                            <li class="nav-item active">-->
+                                            <!--                                                <a class="nav-link" href="/">Home</a>-->
+                                            <!--                                            </li>-->
+                                            <!--                                            <li class="nav-item">-->
+                                            <!--                                                <a class="nav-link" href="#">About</a>-->
+                                            <!--                                            </li>-->
+                                            <!--                                            <li class="nav-item dropdown">-->
+                                            <!--                                                <a class="nav-link" href="/blog">-->
+                                            <!--                                                    Blog-->
+                                            <!--                                                </a>-->
+
+                                            <!--                                            </li>-->
+                                            <!--                                            <li class="nav-item dropdown">-->
+                                            <!--                                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"-->
+                                            <!--                                                   role="button" data-toggle="dropdown" aria-haspopup="true"-->
+                                            <!--                                                   aria-expanded="false">-->
+                                            <!--                                                    Projects-->
+                                            <!--                                                </a>-->
+                                            <!--                                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+                                            <!--                                                    <a class="dropdown-item" href="#">Project</a>-->
+                                            <!--                                                    <a class="dropdown-item" href="#">Project Details</a>-->
+                                            <!--                                                    <a class="dropdown-item" href="#">Project Name</a>-->
+                                            <!--                                                    <a class="dropdown-item" href="#">Elements</a>-->
+                                            <!--                                                </div>-->
+                                            <!--                                            </li>-->
+                                            <!--                                            <li class="nav-item active">-->
+                                            <!--                                                <a class="nav-link" href="/contactus">Contact</a>-->
+                                            <!--                                            </li>-->
+                                            <t t-foreach="website.menu_id.child_id" t-as="submenu">
+                                                <t t-call="website.submenu">
+                                                    <t t-set="item_class" t-value="'nav-item'"/>
+                                                    <t t-set="link_class" t-value="'nav-link'"/>
+                                                </t>
+                                            </t>
+
+                                        </ul>
+                                    </div>
+                                </nav>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="dropdown"
+                                     t-if="(request and request.is_frontend_multilang and len(languages) &gt; 1) or (website and (editable or translatable))">
+                                    <div class="dropdown-toggle" type="button" data-toggle="dropdown"
+                                         aria-expanded="false">
+                                        <!--                                                    <i class="fa fa-globe" aria-hidden="false"></i>-->
+                                        <button class="btn btn-sm btn-secondary" style="padding: 10px;
+                                                            box-shadow: 0px 0px 6px 0px #e8e8e8;
+                                                            border-radius: 9px;
+                                                            background-color: white;
+                                                            color: #222222;
+                                                            border: none;" type="button"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                            <span t-esc="list(filter(lambda lg : lg[0] == lang, languages))[0][1].split('/').pop()"/>
+
+                                        </button>
+                                        <!--                                        <div class="dropdown-menu" role="menu">-->
+                                        <!--                                            <t t-foreach="languages" t-as="lg">-->
+                                        <!--                                                <a t-att-href="url_for(request.httprequest.path + '?' + keep_query(), lang=lg[0])"-->
+                                        <!--                                                   class="dropdown-item js_change_lang"-->
+                                        <!--                                                   t-att-data-default-lang="(editable or translatable) and 'true' if website and lg[0] == website.default_lang_code else None"-->
+                                        <!--                                                   t-att-data-lang="lg[0]">-->
+                                        <!--                                                    <t t-esc="lg[1].split('/').pop()"/>-->
+                                        <!--                                                </a>-->
+                                        <!--                                            </t>-->
+                                        <!--                                        </div>-->
+                                    </div>
+                                    <ul class="dropdown-menu">
+                                        <li class="dropdown-item" t-foreach="languages" t-as="lg">
+                                            <a
+                                                    t-att-href="url_for(request.httprequest.path + '?' + keep_query(), lang=lg[0])"
+                                                    t-att-data-default-lang="(editable or translatable) and 'true' if website and lg[0] == website.default_lang_code else None"
+                                                    t-att-data-lang="lg[0]"
+                                                    class="js_change_lang">
+                                                <t t-esc="lg[1].split('/').pop()"/>
+                                            </a>
+                                        </li>
+                                        <li class="dropdown-item" groups="website.group_website_publisher">
+                                            <t t-set="url_return"
+                                               t-value="url_for('', '[lang]') + '?' + keep_query()"/>
+                                            <a t-attf-href="/web#action=base.action_view_base_language_install&amp;website_id=#{website.id if website else ''}&amp;url_return=#{url_return}">
+                                                <i class="fa fa-plus-circle"/>
+                                                Add a language...
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <a class="socialicon3 authorization-link"
+                                   t-if="user_id._is_public()" href="web/login">
+                                    SignIn
+                                </a>
+
+                                <a class="socialicon3 offset-col-3" t-if="user_id._is_public() and signup_enabled"
+                                   href="web/signup">
+                                    Register
+                                </a>
+
+                                <div class="dropdown" t-ignore="true" t-if="not user_id._is_public()">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="    padding: 15px;
+                                                                                                            border: 1px solid white;
+                                                                                                            border-radius: 30px;
+                                                                                                            background-color: white;">
+                                        <b>
+                                            <span t-esc="user_id.name[:23] + '...' if user_id.name and len(user_id.name) &gt; 25 else user_id.name"
+                                                  class="d-none d-sm-inline"/>
+                                            <span class="caret"></span>
+                                        </b>
+                                    </a>
+
+                                    <ul class="dropdown-menu js_usermenu" role="menu">
+                                        <li class="dropdown-item" id="o_myaccount">
+                                            <a t-attf-href="/my/home" role="menuitem">
+                                                My Account
+                                            </a>
+                                        </li>
+                                        <li class="dropdown-item" id="o_logout">
+                                            <a t-attf-href="/web/session/logout?redirect=/" role="menuitem">
+                                                Logout
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+            </xpath>
+        </template>
+
+
+        <template id="theme_footer_management" inherit_id="website.footer_custom" name="management Footer">
+            <xpath expr="//div[@id='footer']" position="replace">
+                <section class="footer-area section_padding">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3 single-footer-widget">
+                                <h4>About</h4>
+                                <p>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                    Lorem Ipsum has been the industry's standard dummy text ever
+                                </p>
+                            </div>
+                            <div class="col-md-3 single-footer-widget">
+                                <h4>Quick Links</h4>
+                                <ul>
+                                    <li>
+                                        <a href="#">Home</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">About Us</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Services</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Contact Us</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-3 single-footer-widget">
+                                <h4>Features</h4>
+                                <ul>
+                                    <li>
+                                        <a href="#">Testimonials</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Blog</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Jobs</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Term and Conditions</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="col-md-3 single-footer-widget">
+                                <h4>Newsletter</h4>
+                                <p>You can trust us. we only send promo offers,</p>
+                                <div class="form-wrap" id="mc_embed_signup">
+                                    <form target="_blank"
+                                          action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+                                          method="get" class="form-inline">
+                                        <input class="form-control" name="EMAIL" placeholder="Your Email Address"
+                                               onfocus="this.placeholder = ''"
+                                               onblur="this.placeholder = 'Your Email Address '"
+                                               required="" type="email"/>
+                                        <button class="click-btn btn btn-default text-uppercase btn_2">subscribe
+                                        </button>
+                                        <div style="position: absolute; left: -5000px;">
+                                            <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value=""
+                                                   type="text"/>
+                                        </div>
+
+                                        <div class="info"></div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+            </xpath>
+        </template>
+
+        <template id="management_layout_footer_copyright" inherit_id="website.layout"
+                  name="management Footer Copyright">
+            <xpath expr="//footer/div[@class='o_footer_copyright']" position="replace">
+                <footer class="copyright_part">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <p class="footer-text m-0 col-lg-8 col-md-12">
+                                Copyright &amp;copy; All rights reserved | This template is made by
+                                <a href="https://www.technaureus.com/" target="_blank">Technaureus</a>
+                            </p>
+                            <div class="col-lg-4 col-md-12 text-center text-lg-right footer-social">
+                                <a t-att-href="website.social_facebook"
+                                   t-if="website.social_facebook">
+                                    <i class="ti-facebook"></i>
+                                </a>
+                                <a t-att-href="website.social_twitter"
+                                   t-if="website.social_twitter">
+                                    <i class="ti-twitter"></i>
+                                </a>
+                                <a t-att-href="website.social_instagram"
+                                   t-if="website.social_instagram">
+                                    <i class="ti-instagram"></i>
+                                </a>
+                                <a t-att-href="website.social_linkedin"
+                                   t-if="website.social_linkedin">
+                                    <i class="ti-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </xpath>
+        </template>
+
+
+    </data>
+</odoo>

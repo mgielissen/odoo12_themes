@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <!-- === Homepage Page === -->
+    <record id="management_homepage_view" model="ir.ui.view">
+        <field name="name">Home</field>
+        <field name="url">/management_homepage</field>
+        <field name="type">qweb</field>
+        <field name="key">website.management_homepage_view</field>
+        <field name="arch" type="xml">
+            <t t-name="website.management_homepage">
+                <t t-call="website.layout">
+                    <t t-set="pageName" t-value="'homepage'"/>
+                    <div id="wrap">
+                        <div class="oe_structure"></div>
+                        <!-- banner part start-->
+                        <section class="banner_part">
+                            <div class="container">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-7 col-xl-6">
+                                        <div class="banner_text">
+                                            <div class="banner_text_iner">
+                                                <h1>Lead from
+                                                    <br/>
+                                                    Front in Business
+                                                    <br/>
+                                                    Innovation.
+                                                </h1>
+                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting
+                                                    industry.
+                                                    Lorem Ipsum has been the
+                                                </p>
+                                                <a href="#" class="btn_1">learn more</a>
+                                                <a href="https://youtu.be/pxhVUkhLvR0"
+                                                   class="popup-youtube video_popup">
+                                                    <span>
+                                                        <img src="/theme_management/static/src/img/icon/play.svg"
+                                                             alt=""/>
+                                                    </span>
+                                                    Intro Video
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hero-app-1 custom-animation">
+                                <img src="/theme_management/static/src/img/favicon.png" alt=""/>
+                            </div>
+                            <div class="hero-app-2 custom-animation2">
+                                <img src="/theme_management/static/src/img/animate_icon/icon_2.png" alt=""/>
+                            </div>
+                            <div class="hero-app-5 custom-animation4">
+                                <img src="/theme_management/static/src/img/animate_icon/icon_5.png" alt=""/>
+                            </div>
+                            <div class="hero-app-7 custom-animation2">
+                                <img src="/theme_management/static/src/img/animate_icon/icon_7.png" alt=""/>
+                            </div>
+                            <div class="hero-app-8 custom-animation">
+                                <img src="/theme_management/static/src/img/animate_icon/icon_8.png" alt=""/>
+                            </div>
+                        </section>
+                        <!-- banner part start-->
+                        <div class="oe_structure"></div>
+                        <!-- about part start-->
+                        <section class="about_part">
+                            <div class="container">
+                                <div class="row align-items-center justify-content-end">
+                                    <div class="col-md-6 col-lg-6 col-xl-5">
+                                        <div class="about_img">
+                                            <img src="/theme_management/static/src/img/about_img_1.png" alt=""/>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-6 offset-xl-1 col-xl-6">
+                                        <div class="about_text">
+                                            <h2>We Have 24 Year
+                                                Expereince in consulting
+                                            </h2>
+                                            <h4>Lorem Ipsum is simply dummy text of the printing</h4>
+                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting
+                                                industry.
+                                                Lorem Ipsum has been the industry's standard dummy text ever since the
+                                                1500s,
+                                                when an unknown printer took a galley of type and scrambled it to make a
+                                                type
+                                                specimen book.
+                                            </p>
+                                            <a href="#" class="btn_2">read more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hero-app-7 custom-animation">
+                                <img src="/theme_management/static/src/img/animate_icon/icon_1.png" alt=""/>
+                            </div>
+                            <div class="hero-app-8 custom-animation2">
+                                <img src="/theme_management/static/src/img/animate_icon/icon_2.png" alt=""/>
+                            </div>
+                            <div class="hero-app-6 custom-animation3">
+                                <img src="/theme_management/static/src/img/animate_icon/icon_3.png" alt=""/>
+                            </div>
+                        </section>
+                        <!-- about part start-->
+                        <div class="oe_structure"></div>
+                        <!-- service_part start-->
+                        <section class="service_part section_padding gray_bg">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-sm-12 col-lg-8 col-xl-4">
+                                        <div class="single_service_text">
+                                            <h2>We Provide Best Services</h2>
+                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting
+                                                industry.
+                                                Lorem Ipsum has been the industry's standard dummy text ever since the
+                                                1500s,
+                                                when an unknown printer took a galley of type and scrambled it to make a
+                                                type
+                                                specimen book.
+                                            </p>
+                                            <a href="#" class="btn_2">Load More</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-xl-4">
+                                        <div class="single_service_part">
+                                            <span class="single_service_icon">
+                                                <i class="flaticon-growth"></i>
+                                            </span>
+                                            <h4>Business Opportunity</h4>
+                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting
+                                                industry.
+                                                Lorem Ipsum has been the industry's
+                                            </p>
+                                            <a href="#" class="btn_3">Learn More
+                                                <i class="ti-arrow-right"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-xl-4">
+                                        <div class="single_service_part single_service_part_2">
+                                            <span class="single_service_icon style_icon">
+                                                <i class="flaticon-wallet"></i>
+                                            </span>
+                                            <h4>Commercial Approach</h4>
+                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting
+                                                industry.
+                                                Lorem Ipsum has been the industry's
+                                            </p>
+                                            <a href="#" class="btn_3 service_btn">Learn More
+                                                <i class="ti-arrow-right"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- upcoming_event part start-->
+                        <div class="oe_structure"></div>
+
+                        <!-- portfolio_part start-->
+                        <section class="portfolio_part section_padding">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="card-columns">
+                                            <div class="card">
+                                                <blockquote class="blockquote mb-0">
+                                                    <h2>Explore Our Best
+                                                        Practice Area
+                                                    </h2>
+                                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting
+                                                        industry.
+                                                        Lorem Ipsum is simply dummy text of
+                                                    </p>
+                                                </blockquote>
+                                            </div>
+                                            <div class="card">
+                                                <img src="/theme_management/static/src/img/gallery/gallery_item.png"
+                                                     class="card-img-top" alt="..."/>
+                                                <div class="card-body">
+                                                    <a href="project_details.html">
+                                                        <h5 class="card-title">Startup Project</h5>
+                                                    </a>
+                                                    <p class="card-text">All days lights grass midst from unto</p>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <img src="/theme_management/static/src/img/gallery/gallery_item_1.png"
+                                                     class="card-img-top" alt="..."/>
+                                                <div class="card-body">
+                                                    <a href="project_details.html">
+                                                        <h5 class="card-title">Startup Project</h5>
+                                                    </a>
+                                                    <p class="card-text">All days lights grass midst from unto</p>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <img src="/theme_management/static/src/img/gallery/gallery_item_2.png"
+                                                     class="card-img-top" alt="..."/>
+                                                <div class="card-body">
+                                                    <a href="project_details.html">
+                                                        <h5 class="card-title">Startup Project</h5>
+                                                    </a>
+                                                    <p class="card-text">All days lights grass midst from unto</p>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <img src="/theme_management/static/src/img/gallery/gallery_item_3.png"
+                                                     class="card-img-top" alt="..."/>
+                                                <div class="card-body">
+                                                    <a href="project_details.html">
+                                                        <h5 class="card-title">Startup Project</h5>
+                                                    </a>
+                                                    <p class="card-text">All days lights grass midst from unto</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- portfolio_part part end-->
+                        <div class="oe_structure"></div>
+
+                        <!--::blog_part start::-->
+                        <section class="blog_part">
+                            <div class="container">
+
+                                <div class="section_tittle">
+
+                                    <h2 style="font-size: 72px;
+                        color: #e2e6e8;">Blog
+                                    </h2>
+                                </div>
+                                <div class="row">
+                                    <t t-foreach="website.get_latest_blog_posts()" t-as="blog_post">
+                                        <div class="col-sm-6 col-lg-4 col-xl-4 d-sm-block">
+                                            <div class="single-home-blog">
+                                                <div class="card">
+                                                    <a t-attf-href="/blog/#{ slug(blog_post.blog_id) }/post/#{ slug(blog_post) }">
+                                                        <img t-att-src="website.get_cover_image(blog_post)"
+                                                             t-att-title="blog_post.name"
+                                                             t-att-alt="blog_post.name"
+                                                             class="img img-responsive"/>
+                                                    </a>
+                                                    <div class="card-body">
+                                                        <a href="blog.html">Technology</a>
+                                                        |
+                                                        <span><t t-esc="blog_post.post_date"/></span>
+                                                        <a class="latest-posts-title"
+                                                           t-attf-href="/blog/#{ slug(blog_post.blog_id) }/post/#{ slug(blog_post) }">
+                                                            <h5 class="card-title">
+                                                                <t t-esc="blog_post.name"/>
+                                                            </h5>
+                                                        </a>
+
+                                                        <!-- <ul>
+                                                            <li> <span class="ti-comments"></span>2 Comments</li>
+                                                            <li> <span class="ti-heart"></span>0 Like</li>
+                                                        </ul> -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </t>
+                                    <!--                                    <div class="col-sm-6 col-lg-4 col-xl-4">-->
+                                    <!--                                        <div class="single-home-blog">-->
+                                    <!--                                            <div class="card">-->
+                                    <!--                                                <img src="/theme_management/static/src/img/blog/blog_1.png"-->
+                                    <!--                                                     class="card-img-top" alt="blog"/>-->
+                                    <!--                                                <div class="card-body">-->
+                                    <!--                                                    <a href="blog.html">Technology</a>-->
+                                    <!--                                                    |-->
+                                    <!--                                                    <span>March 30, 2019</span>-->
+                                    <!--                                                    <a href="blog.html">-->
+                                    <!--                                                        <h5 class="card-title">He waters likeness their land set female-->
+                                    <!--                                                            for-->
+                                    <!--                                                        </h5>-->
+                                    <!--                                                    </a>-->
+                                    <!--                                                    -->
+                                    <!--                                                </div>-->
+                                    <!--                                            </div>-->
+                                    <!--                                        </div>-->
+                                    <!--                                    </div>-->
+                                    <!--                                    <div class="col-sm-6 col-lg-4 col-xl-4">-->
+                                    <!--                                        <div class="single-home-blog">-->
+                                    <!--                                            <div class="card">-->
+                                    <!--                                                <img src="/theme_management/static/src/img/blog/blog_2.png"-->
+                                    <!--                                                     class="card-img-top" alt="blog"/>-->
+                                    <!--                                                <div class="card-body">-->
+                                    <!--                                                    <a href="blog.html">Technology</a>-->
+                                    <!--                                                    |-->
+                                    <!--                                                    <span>March 30, 2019</span>-->
+                                    <!--                                                    <a href="blog.html">-->
+                                    <!--                                                        <h5 class="card-title">Be there bring void give good from-->
+                                    <!--                                                            stars-->
+                                    <!--                                                        </h5>-->
+                                    <!--                                                    </a>-->
+                                    <!--                                                    &lt;!&ndash; <ul>-->
+                                    <!--                                                        <li> <span class="ti-comments"></span>2 Comments</li>-->
+                                    <!--                                                        <li> <span class="ti-heart"></span>0 Like</li>-->
+                                    <!--                                                    </ul> &ndash;&gt;-->
+                                    <!--                                                </div>-->
+                                    <!--                                            </div>-->
+                                    <!--                                        </div>-->
+                                    <!--                                    </div>-->
+<!--                                    <div class="col-sm-6 col-lg-4 col-xl-4">-->
+<!--                                        <div class="single-home-blog">-->
+<!--                                            <div class="card">-->
+<!--                                                <img src="/theme_management/static/src/img/blog/blog_3.png"-->
+<!--                                                     class="card-img-top" alt="blog"/>-->
+<!--                                                <div class="card-body">-->
+<!--                                                    <a href="blog.html">Technology</a>-->
+<!--                                                    |-->
+<!--                                                    <span>March 30, 2019</span>-->
+<!--                                                    <a href="blog.html">-->
+<!--                                                        <h5 class="card-title">Third lights they're over moved days-->
+<!--                                                            above-->
+<!--                                                        </h5>-->
+<!--                                                    </a>-->
+
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+                                </div>
+                            </div>
+                        </section>
+                        <!--::blog_part end::-->
+                        <div class="oe_structure"></div>
+
+
+                    </div>
+
+                </t>
+            </t>
+        </field>
+    </record>
+    <record id="management_homepage" model="website.page">
+        <field name="url">/management_homepage</field>
+        <field name="is_homepage" eval="True"></field>
+        <field name="website_published">True</field>
+        <field name="view_id" ref="management_homepage_view"/>
+    </record>
+    <record id="website.default_website" model="website">
+        <field name="homepage_id" ref="management_homepage"/>
+    </record>
+</odoo>
